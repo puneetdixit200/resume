@@ -3,7 +3,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const navLinks = Array.from(document.querySelectorAll('.nav__link'));
   const pages = Array.from(document.querySelectorAll('.page'));
-  const themeToggle = document.getElementById('theme-toggle');
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
   const loadingOverlay = document.getElementById('loading');
@@ -33,43 +32,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (navToggle && navMenu) navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
 
-  // Theme handling
-  function setTheme(theme) {
-    document.documentElement.setAttribute('data-color-scheme', theme);
-    localStorage.setItem('color-scheme', theme);
-    if (themeToggle) {
-      themeToggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-    }
-  }
-
-  // Check for system dark mode preference
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-  
-  // Get saved theme or use system preference
-  const savedTheme = localStorage.getItem('color-scheme');
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else {
-    setTheme(prefersDark.matches ? 'dark' : 'light');
-  }
-
-  // Listen for system theme changes
-  prefersDark.addEventListener('change', (e) => {
-    if (!localStorage.getItem('color-scheme')) {
-      setTheme(e.matches ? 'dark' : 'light');
-    }
-  });
-
-  // Theme toggle button
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-color-scheme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      setTheme(next);
-    });
-  }
 
   if (loadingOverlay) loadingOverlay.style.display = 'none';
+
+  // Create popup elements
+  const popup = document.createElement('div');
+  popup.className = 'popup';
+  popup.innerHTML = `
+    <div class="popup__icon">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <h3 class="popup__title">Thank You!</h3>
+    <p class="popup__message">Your message has been sent successfully. We'll get back to you soon.</p>
+    <button class="popup__button">Close</button>
+  `;
+  document.body.appendChild(popup);
+
+  const overlay = document.createElement('div');
+  overlay.className = 'popup-overlay';
+  document.body.appendChild(overlay);
+
+  function showPopup() {
+    overlay.classList.add('show');
+    popup.classList.add('show');
+  }
+
+  function hidePopup() {
+    overlay.classList.remove('show');
+    popup.classList.remove('show');
+  }
+
+  popup.querySelector('.popup__button').addEventListener('click', hidePopup);
+  overlay.addEventListener('click', hidePopup);
 
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
@@ -78,10 +72,18 @@ document.addEventListener('DOMContentLoaded', function () {
       const name = (fd.get('name') || '').toString().trim();
       const email = (fd.get('email') || '').toString().trim();
       const message = (fd.get('message') || '').toString().trim();
-      if (!name || !email || !message) { showNotification('Please fill all required fields.', 'error'); return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showNotification('Please enter a valid email address.', 'error'); return; }
+      
+      if (!name || !email || !message) { 
+        showNotification('Please fill all required fields.', 'error'); 
+        return; 
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { 
+        showNotification('Please enter a valid email address.', 'error'); 
+        return; 
+      }
+      
       contactForm.reset();
-      showNotification('Message sent. Thank you!', 'success');
+      showPopup();
     });
   }
 
