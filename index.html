@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puneet Dixit - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav__content">
+                <div class="nav__logo">
+                    <span class="logo-text">Puneet Dixit</span>
+                </div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#" class="nav__link active" data-page="home">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link" data-page="resume">Resume</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link" data-page="biodata">Bio-data</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link" data-page="projects">Projects</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link" data-page="contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav__actions">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="nav__toggle" id="nav-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Sections -->
+    <main class="main">
+        <!-- Home Page -->
+        <section class="page active" id="home">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero__content">
+                        <div class="hero__text">
+                            <h1 class="hero__title">
+                                Hi, I'm <span class="text-primary">Puneet Dixit</span>
+                            </h1>
+                            <div class="hero__subtitle">
+                                <span class="typing-text" id="typing-text"></span>
+                                <span class="cursor">|</span>
+                            </div>
+                            <p class="hero__description">
+                                BTech student from Bengaluru, passionate about AI, robotics, and web development. 
+                                Organizer of technical competitions and builder of innovative solutions.
+                            </p>
+                            <div class="hero__actions">
+                                <button class="btn btn--primary" data-page="projects">View Projects</button>
+                                <button class="btn btn--outline" data-page="contact">Get In Touch</button>
+                            </div>
+                        </div>
+                        <div class="hero__avatar">
+                            <div class="avatar-circle">
+                                <img src="assets/profile.jpg" alt="Puneet Dixit" class="avatar-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section skills-overview">
+                <div class="container">
+                    <h2 class="section__title">Technical Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Frontend</h3>
+                            <div class="skill-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">Tailwind CSS</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Backend</h3>
+                            <div class="skill-tags">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">Redis</span>
+                                <span class="tag">API Integration</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3>AI & Tools</h3>
+                            <div class="skill-tags">
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">NLP</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">Virtual Machines</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section featured-projects">
+                <div class="container">
+                    <h2 class="section__title">Featured Projects</h2>
+                    <div class="projects-grid">
+                        <div class="project-card" data-project="hospiflo">
+                            <div class="project-card__icon">
+                                <i class="fas fa-hospital"></i>
+                            </div>
+                            <h3>HospiFlo</h3>
+                            <p>AI hospital resource management system</p>
+                        </div>
+                        <div class="project-card" data-project="safescan">
+                            <div class="project-card__icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>SafeScan</h3>
+                            <p>AI chemical detection mobile application</p>
+                        </div>
+                        <div class="project-card" data-project="robowar">
+                            <div class="project-card__icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3>Robowar Bot</h3>
+                            <p>Heavy, thrust-focused robotics project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Page -->
+        <section class="page" id="resume">
+            <div class="container">
+                <div class="resume-header">
+                    <h1>Resume</h1>
+                    <button class="btn btn--primary download-btn">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                </div>
+
+                <div class="resume-content">
+                    <div class="resume-section">
+                        <h2><i class="fas fa-user"></i> Personal Information</h2>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <strong>Name:</strong> Puneet Dixit
+                            </div>
+                            <div class="info-item">
+                                <strong>Location:</strong> Bengaluru, India
+                            </div>
+                            <div class="info-item">
+                                <strong>Email:</strong> puneet.dixit@example.com
+                            </div>
+                            <div class="info-item">
+                                <strong>Phone:</strong> +91-9569965462
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                        <div class="timeline-item">
+                            <h3>Bachelor of Technology (BTech)</h3>
+                            <p class="timeline-meta">Current Student</p>
+                            <p>Pursuing BTech degree with focus on technology and innovation</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h2><i class="fas fa-trophy"></i> Competition Organization</h2>
+                        <div class="timeline-item">
+                            <h3>Robofiesta 2025</h3>
+                            <p class="timeline-meta">Organizer</p>
+                            <p>Major robotics competition featuring cutting-edge robotics projects and innovations</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>BuildYourWeb 2024</h3>
+                            <p class="timeline-meta">Organizer</p>
+                            <p>Web development competition showcasing modern web technologies and creative solutions</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h2><i class="fas fa-code"></i> Technical Skills</h2>
+                        <div class="skills-categories">
+                            <div class="skill-group">
+                                <h4>Frontend Development</h4>
+                                <div class="skill-bar">
+                                    <span class="skill-name">React</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" data-width="90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <span class="skill-name">JavaScript</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" data-width="95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <span class="skill-name">CSS/HTML</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" data-width="90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-group">
+                                <h4>Backend & Database</h4>
+                                <div class="skill-bar">
+                                    <span class="skill-name">Node.js</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" data-width="85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <span class="skill-name">PostgreSQL</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" data-width="80%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <span class="skill-name">Redis</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" data-width="75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-group">
+                                <h4>AI & Machine Learning</h4>
+                                <div class="skill-bar">
+                                    <span class="skill-name">Machine Learning</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" data-width="85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <span class="skill-name">NLP</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" data-width="80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bio-data Page -->
+        <section class="page" id="biodata">
+            <div class="container">
+                <h1>Bio-data</h1>
+                <div class="biodata-content">
+                    <div class="biodata-section">
+                        <h2>Personal Details</h2>
+                        <div class="biodata-grid">
+                            <div class="biodata-item">
+                                <strong>Full Name:</strong> Puneet Dixit
+                            </div>
+                            <div class="biodata-item">
+                                <strong>Location:</strong> Bengaluru, India
+                            </div>
+                            <div class="biodata-item">
+                                <strong>Nationality:</strong> Indian
+                            </div>
+                            <div class="biodata-item">
+                                <strong>Languages:</strong> English, Hindi
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biodata-section">
+                        <h2>Educational Background</h2>
+                        <p>Currently pursuing Bachelor of Technology (BTech) with a strong focus on computer science, artificial intelligence, and robotics.</p>
+                    </div>
+
+                    <div class="biodata-section">
+                        <h2>Interests & Hobbies</h2>
+                        <div class="interests-grid">
+                            <div class="interest-item">
+                                <i class="fas fa-robot"></i>
+                                <span>AI & Robotics</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-code"></i>
+                                <span>Web Development</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-rocket"></i>
+                                <span>Startups</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-music"></i>
+                                <span>Music</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-gamepad"></i>
+                                <span>Gaming</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-film"></i>
+                                <span>Movies & Theater</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-cogs"></i>
+                                <span>System Optimization</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-tools"></i>
+                                <span>Workflow Automation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biodata-section">
+                        <h2>Personality Traits</h2>
+                        <ul class="traits-list">
+                            <li>Analytical and detail-oriented approach to problem-solving</li>
+                            <li>Enjoys humor and sarcasm in casual discussions</li>
+                            <li>Systematic and step-by-step methodology</li>
+                            <li>Creative problem solver with high-quality solutions focus</li>
+                            <li>Strong leadership and coordination abilities</li>
+                            <li>Excellent event organization and management skills</li>
+                        </ul>
+                    </div>
+
+                    <!-- Platforms & Tools section removed -->
+
+                    <div class="biodata-section">
+                        <h2>Career Objectives</h2>
+                        <p>To leverage my technical skills in AI, web development, and robotics to create innovative solutions that solve real-world problems. Passionate about building startups and contributing to the tech ecosystem while continuously learning and growing in emerging technologies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Page -->
+        <section class="page" id="projects">
+            <div class="container">
+                <h1>Projects</h1>
+                <div class="projects-content">
+                    <div class="project-detailed">
+                        <div class="project-header">
+                            <h2><i class="fas fa-hospital"></i> HospiFlo</h2>
+                            <span class="project-category">AI/Healthcare</span>
+                        </div>
+                        <p class="project-description">
+                            AI-powered hospital resource management system that optimizes resource allocation, 
+                            streamlines patient flow, and improves overall hospital efficiency through intelligent automation.
+                        </p>
+                        <div class="project-tech">
+                            <h4>Tech Stack:</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">AI</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Database Management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-detailed">
+                        <div class="project-header">
+                            <h2><i class="fas fa-shield-alt"></i> SafeScan</h2>
+                            <span class="project-category">AI/Safety</span>
+                        </div>
+                        <p class="project-description">
+                            AI-driven chemical detection mobile application that uses computer vision and machine learning 
+                            to identify potentially harmful chemicals and provide safety recommendations in real-time.
+                        </p>
+                        <div class="project-tech">
+                            <h4>Tech Stack:</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">AI</span>
+                                <span class="tech-tag">Mobile Development</span>
+                                <span class="tech-tag">Computer Vision</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-detailed">
+                        <div class="project-header">
+                            <h2><i class="fas fa-robot"></i> Robowar Bot</h2>
+                            <span class="project-category">Robotics</span>
+                        </div>
+                        <p class="project-description">
+                            Heavy-duty, thrust-focused robotics project designed for competitive robot combat. 
+                            Features advanced control systems, robust mechanical engineering, and strategic combat capabilities.
+                        </p>
+                        <div class="project-tech">
+                            <h4>Tech Stack:</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Robotics</span>
+                                <span class="tech-tag">Mechanical Engineering</span>
+                                <span class="tech-tag">Control Systems</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive HTML Desktop Wallpaper project removed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section class="page" id="contact">
+            <div class="container">
+                <h1>Contact</h1>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Get In Touch</h2>
+                        <p>I'm always interested in discussing new opportunities, innovative projects, and collaborations.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>puneet.dixit@example.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+91-9569965462</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Bengaluru, India</span>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contact-form">
+                            <h3>Send a Message</h3>
+                            <div class="form-group">
+                                <label class="form-label" for="name">Name *</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email *</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="subject">Subject *</label>
+                                <input type="text" id="subject" name="subject" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="message">Message *</label>
+                                <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full-width">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
